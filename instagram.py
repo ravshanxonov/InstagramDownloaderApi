@@ -68,6 +68,9 @@ class Instagram:
                 "url": download_urls if len(download_urls) > 1 else download_urls[0],
             }
             return response
+@app.get("/")
+async def root():
+    return {"message": "API is working!"}
 
 @app.get("/api/v2/download", tags=['Version 2'])
 async def get_instagram_media(url: str):
